@@ -3,9 +3,10 @@
 ## TODO
 
 - [x] Set up database and data model
-- [ ] Move folder open state to URL
+- [x] Move folder open state to URL
 - [ ] Add auth
 - [ ] Add file uploading
+- [ ] Add analytics
 
 ## Checkpoint 04-10 (video time 35:55)
 
@@ -14,4 +15,8 @@
 - [x] Render then in the UI
 - [x] Push and make sur it all works
 
-## Checkpoint 04/10 (video time 1:17:30)
+## Checkpoint 04/10 (video time 1:30:00)
+
+- [ ] Change folders to link components, remove all client state
+- [ ] Clean up the database and data fetching patterns
+- [ ] Real homepage
