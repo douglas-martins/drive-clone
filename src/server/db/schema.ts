@@ -1,3 +1,6 @@
+// Guaranty that the schema is only available on the server, sending a RuntimeError if it's imported on the client.
+// import "server-only";
+
 import {
   bigint,
   text,
@@ -33,7 +36,7 @@ export const folders = createTable(
       .primaryKey()
       .autoincrement(),
     name: text("name").notNull(),
-    parent: text("parent"),
+    parent: bigint("parent", { mode: "number", unsigned: true }),
   },
   (tempTable) => {
     return [index("idx_parent").on(tempTable.parent)];

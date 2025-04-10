@@ -1,7 +1,7 @@
 import { Folder as FolderIcon, FileIcon } from "lucide-react";
-import type { Folder, File } from "~/lib/mock-data";
+import { type files, type folders } from "~/server/db/schema";
 
-export function FileRow(props: Readonly<{ file: File }>) {
+export function FileRow(props: Readonly<{ file: typeof files.$inferSelect }>) {
   const { file } = props;
 
   return (
@@ -28,7 +28,7 @@ export function FileRow(props: Readonly<{ file: File }>) {
 }
 
 export function FileFolder(
-  props: Readonly<{ folder: Folder; handleFolderClick: () => void }>,
+  props: Readonly<{ folder: typeof folders.$inferSelect; handleFolderClick: () => void }>,
 ) {
   const { folder, handleFolderClick } = props;
 
