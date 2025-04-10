@@ -1,14 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { mockFiles, mockFolders } from "~/lib/mock-data";
 import { Upload, ChevronRight } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FileFolder, FileRow } from "./file-row";
 // Important to import only then type, so the client don't import the role db wrapper.
 import { type files, type folders } from "~/server/db/schema";
 
-export default function GoogleDriveClone(props: Readonly<{ files: (typeof files.$inferSelect)[], folders: (typeof folders.$inferSelect)[] }>) {
+export default function DriveContents(props: Readonly<{ files: (typeof files.$inferSelect)[], folders: (typeof folders.$inferSelect)[] }>) {
   const [currentFolder, setCurrentFolder] = useState<number | null>(1);
 
   const handleFolderClick = (folderId: number) => {
@@ -30,7 +29,7 @@ export default function GoogleDriveClone(props: Readonly<{ files: (typeof files.
     }
 
     return breadcrumbs;
-  }, [currentFolder]);
+  }, [currentFolder, props.folders]);
 
   const handleUpload = () => {
     alert("Upload functionality would be implemented here");

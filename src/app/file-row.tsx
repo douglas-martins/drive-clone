@@ -20,8 +20,8 @@ export function FileRow(props: Readonly<{ file: typeof files.$inferSelect }>) {
             {file.name}
           </a>
         </div>
-        <div className="col-span-3 text-gray-400">{"file"}</div>
-        <div className="col-span-3 text-gray-400">{"size"}</div>
+        <div className="col-span-3 text-gray-400">{file.type}</div>
+        <div className="col-span-3 text-gray-400">{file.size}</div>
       </div>
     </li>
   );
@@ -47,8 +47,8 @@ export function FileFolder(
             {folder.name}
           </button>
         </div>
-        <div className="col-span-3 text-gray-400">{"file"}</div>
-        <div className="col-span-3 text-gray-400">{"size"}</div>
+        <div className="col-span-3 text-gray-400"></div>
+        <div className="col-span-3 text-gray-400"></div>
       </div>
     </li>
   );
