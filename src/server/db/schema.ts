@@ -17,6 +17,7 @@ export const files = createTable(
       .autoincrement(),
     name: text("name").notNull(),
     type: text("type").notNull(),
+    size: bigint("size", { mode: "number", unsigned: true }).notNull(),
     url: text("url").notNull(),
     parent: bigint("parent", { mode: "number", unsigned: true }).notNull(),
   },
