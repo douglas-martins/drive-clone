@@ -35,3 +35,12 @@ export async function getAllParentsForFolder(folderId: number) {
 
   return parents;
 }
+
+export async function getFolderById(folderId: number) {
+  const folder = await db
+    .select()
+    .from(folders_table)
+    .where(eq(folders_table.id, folderId));
+
+  return folder[0];
+}

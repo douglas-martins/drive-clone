@@ -16,6 +16,7 @@ export default function DriveContents(
     files: DB_FileType[];
     folders: DB_FolderType[];
     parents: DB_FolderType[];
+    currentFolderId: number;
   }>,
 ) {
   const navigate = useRouter();
@@ -76,6 +77,7 @@ export default function DriveContents(
         </div>
         <UploadButton
           endpoint="imageUploader"
+          input={{ folderId: props.currentFolderId }}
           onClientUploadComplete={() => navigate.refresh()}
         />
       </div>

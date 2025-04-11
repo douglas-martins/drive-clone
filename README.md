@@ -22,7 +22,8 @@
 
 ## Checkpoint 04/11 (video time 2:20:30)
 
+- [x] Add "ownership" to files and folders
 - [ ] Real homepage
-- [ ] Upload files to the right folder
+- [x] Upload files to the right folder
 - [ ] Delete files button
 - [ ] Allow files that aren't images to be uploaded
