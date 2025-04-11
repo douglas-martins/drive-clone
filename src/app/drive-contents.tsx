@@ -11,13 +11,16 @@ export default function DriveContents(
   props: Readonly<{
     files: (typeof files.$inferSelect)[];
     folders: (typeof folders.$inferSelect)[];
+    parents: (typeof folders.$inferSelect)[];
   }>,
 ) {
-  const breadcrumbs: (typeof folders.$inferSelect)[] = [];
-
   const handleUpload = () => {
     alert("Upload functionality would be implemented here");
   };
+
+  function handleFolderClick(id: number): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 p-8 text-gray-100">
@@ -27,7 +30,7 @@ export default function DriveContents(
             <Link href="/f/1" className="mr-2 text-gray-300 hover:text-white">
               My Drive
             </Link>
-            {breadcrumbs.map((folder) => (
+            {props.parents.map((folder) => (
               <div key={folder.id} className="flex items-center">
                 <ChevronRight className="mx-2 text-gray-500" size={16} />
                 <Link
