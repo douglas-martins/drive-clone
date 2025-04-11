@@ -16,6 +16,7 @@ export const env = createEnv({
     SINGLESTORE_USER: z.string(),
     SINGLESTORE_PASSWORD: z.string(),
     SINGLESTORE_DATABASE: z.string(),
+    UPLOADTHING_TOKEN: z.string(),
   },
 
   /**
@@ -39,6 +40,7 @@ export const env = createEnv({
     SINGLESTORE_USER: process.env.SINGLESTORE_USER,
     SINGLESTORE_PASSWORD: process.env.SINGLESTORE_PASSWORD,
     SINGLESTORE_DATABASE: process.env.SINGLESTORE_DATABASE,
+    UPLOADTHING_TOKEN: process.env.UPLOADTHING_TOKEN,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**

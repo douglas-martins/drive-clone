@@ -1,22 +1,24 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { FileFolder, FileRow } from "./file-row";
 // Important to import only then type, so the client don't import the role db wrapper.
-import { type files_table, type folders_table } from "~/server/db/schema";
+import { type DB_FileType, type DB_FolderType } from "~/server/db/schema";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignUpButton, UserButton } from "@clerk/nextjs";
+import { UploadButton } from "~/components/uploadthing";
+
+import "@uploadthing/react/styles.css";
 
 export default function DriveContents(
   props: Readonly<{
-    files: (typeof files_table.$inferSelect)[];
-    folders: (typeof folders_table.$inferSelect)[];
-    parents: (typeof folders_table.$inferSelect)[];
+    files: DB_FileType[];
+    folders: DB_FolderType[];
+    parents: DB_FolderType[];
   }>,
 ) {
-  const handleUpload = () => {
-    alert("Upload functionality would be implemented here");
-  };
+  const navigate = useRouter();
 
   function handleFolderClick(id: number): void {
     throw new Error("Function not implemented.");
@@ -72,6 +74,10 @@ export default function DriveContents(
             ))}
           </ul>
         </div>
+        <UploadButton
+          endpoint="imageUploader"
+          onClientUploadComplete={() => navigate.refresh()}
+        />
       </div>
     </div>
   );

@@ -4,8 +4,8 @@
 
 - [x] Set up database and data model
 - [x] Move folder open state to URL
-- [ ] Add auth
-- [ ] Add file uploading
+- [x] Add auth
+- [x] Add file uploading
 - [ ] Add analytics
 
 ## Checkpoint 04-10 (video time 35:55)
@@ -19,4 +19,10 @@
 
 - [x] Change folders to link components, remove all client state
 - [x] Clean up the database and data fetching patterns
+
+## Checkpoint 04/11 (video time 2:20:30)
+
 - [ ] Real homepage
+- [ ] Upload files to the right folder
+- [ ] Delete files button
+- [ ] Allow files that aren't images to be uploaded
