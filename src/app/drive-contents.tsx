@@ -4,14 +4,14 @@ import { Upload, ChevronRight } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FileFolder, FileRow } from "./file-row";
 // Important to import only then type, so the client don't import the role db wrapper.
-import { type files, type folders } from "~/server/db/schema";
+import { type files_table, type folders_table } from "~/server/db/schema";
 import Link from "next/link";
 
 export default function DriveContents(
   props: Readonly<{
-    files: (typeof files.$inferSelect)[];
-    folders: (typeof folders.$inferSelect)[];
-    parents: (typeof folders.$inferSelect)[];
+    files: (typeof files_table.$inferSelect)[];
+    folders: (typeof folders_table.$inferSelect)[];
+    parents: (typeof folders_table.$inferSelect)[];
   }>,
 ) {
   const handleUpload = () => {
