@@ -8,7 +8,7 @@
 - [x] Add file uploading
 - [x] Add analytics
 - [x] Make sure sort order is consistent
-- [ ] Add delete file button
+- [x] Add delete file button
 - [ ] Real homepage + onboarding
 
 ## Checkpoint 04-10 (video time 35:55)
