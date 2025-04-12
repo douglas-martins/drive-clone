@@ -7,6 +7,8 @@
 - [x] Add auth
 - [x] Add file uploading
 - [ ] Add analytics
+- [ ] Add delete file button
+- [ ] Real homepage + onboarding
 
 ## Checkpoint 04-10 (video time 35:55)
 
@@ -23,7 +25,7 @@
 ## Checkpoint 04/11 (video time 2:20:30)
 
 - [x] Add "ownership" to files and folders
-- [ ] Real homepage
 - [x] Upload files to the right folder
-- [ ] Delete files button
 - [x] Allow files that aren't images to be uploaded
+
+## Checkpoint 04/11 (video 2:40)

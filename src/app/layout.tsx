@@ -4,6 +4,8 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
+import { PostHogProvider } from "~/app/_providers/posthog-provider";
+
 export const metadata: Metadata = {
   title: "Drive Tutorial",
   description: "It's like Google Drive, but for tutorial purposes",
@@ -21,7 +23,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={`${geist.variable}`}>
-        <body>{children}</body>
+        <PostHogProvider>
+          <body>{children}</body>
+        </PostHogProvider>
       </html>
     </ClerkProvider>
   );

@@ -1,7 +1,6 @@
 // Guaranty that the schema is only available on the server, sending a RuntimeError if it's imported on the client.
 // import "server-only";
 
-import { sql } from "drizzle-orm";
 import {
   bigint,
   text,
