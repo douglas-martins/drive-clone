@@ -2,17 +2,22 @@ import "server-only";
 
 import { db } from ".";
 import { files_table, folders_table } from "~/server/db/schema";
-import { eq } from "drizzle-orm";
+import { asc, eq } from "drizzle-orm";
 
 export function getFolders(folderId: number) {
   return db
     .select()
     .from(folders_table)
-    .where(eq(folders_table.parent, folderId));
+    .where(eq(folders_table.parent, folderId))
+    .orderBy(asc(folders_table.id));
 }
 
 export function getFiles(folderId: number) {
-  return db.select().from(files_table).where(eq(files_table.parent, folderId));
+  return db
+    .select()
+    .from(files_table)
+    .where(eq(files_table.parent, folderId))
+    .orderBy(asc(files_table.id));
 }
 
 export async function getAllParentsForFolder(folderId: number) {
