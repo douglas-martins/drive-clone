@@ -1,5 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { Button } from "~/components/ui/button";
+import { onboardUser } from "~/server/db/mutations";
 import { getRootFolderForUser } from "~/server/db/queries";
 
 export default async function DrivePage() {
@@ -12,7 +14,25 @@ export default async function DrivePage() {
   const rootFolder = await getRootFolderForUser(session.userId);
 
   if (!rootFolder) {
-    redirect("/drive/create-root-folder");
+    return (
+      <form
+        action={async () => {
+          "use server";
+
+          const session = await auth();
+
+          if (!session.userId) {
+            redirect("/sign-in");
+          }
+
+          const rootFolderId = await onboardUser(session.userId);
+
+          redirect(`/f/${rootFolderId}`);
+        }}
+      >
+        <Button type="submit">Create new Drive</Button>
+      </form>
+    );
   }
 
   return redirect(`/f/${rootFolder.id}`);
